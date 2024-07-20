@@ -50,15 +50,3 @@ class Milage(models.Model):
         verbose_name = 'пробег'
         verbose_name_plural = 'пробег'
         ordering = ('-year',)
-
-
-class Moto(models.Model):
-    title = models.CharField(max_length=150, verbose_name='название')
-    description = models.TextField(verbose_name='описание')
-
-    def __str__(self):
-        return f'{self.title}'
-
-    class Meta:
-        verbose_name = 'мотоцикл'
-        verbose_name_plural = 'мотоциклы'
