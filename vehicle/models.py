@@ -12,6 +12,8 @@ class Car(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               on_delete=models.CASCADE,
                               **NULLABLE)
+    amount = models.IntegerField(verbose_name='стоимость в руб.', default=1000)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
 
     def __str__(self):
         return f'{self.title}'
@@ -28,6 +30,7 @@ class Moto(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               on_delete=models.CASCADE,
                               **NULLABLE)
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
 
     def __str__(self):
         return f'{self.title}'
